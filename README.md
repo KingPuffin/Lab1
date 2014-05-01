@@ -16,9 +16,9 @@ Using VHDL to drive a test screen to using an HDMI to VGA cable
 	process(clk, reset)
 	begin
 		if (reset = '1') then
-			state_reg <= idle;
-		elsif (clk'event and clk = '1') then
-			state_reg <= state_next;
+			state <= idle;
+		elsif(rising_edge(clk)) then
+			state <= state_next;
 		end if;
 	end process;
 ```
